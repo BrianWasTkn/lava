@@ -9,9 +9,9 @@ export default class PowerUp extends Item {
       buyable: true,
       usable: true,
       emoji: ':joy:',
-      info: 'Gives you +50% winnings on gambling. Runs out after 60 seconds.',
+      info: 'Gives you +50% winnings on gambling for 5 minutes.',
       name: "Thicco's Thiccness",
-      cost: 1500000,
+      cost: 3000000,
     });
   }
 
@@ -21,9 +21,9 @@ export default class PowerUp extends Item {
 
     thicc.amount--;
     thicc.active = true;
-    thicc.expire = Date.now() + 60 * 1000; // client.setTimeout just breaks this
+    thicc.expire = Date.now() + 5 * 60 * 1000; // client.setTimeout just breaks this
     await data.save();
 
-    return 'You have been granted an additional **50%** to your gamble winnings for **60 seconds** only.';
+    return 'You have been granted an additional **50%** to your gamble winnings for **5 minutes** only.';
   }
 }
